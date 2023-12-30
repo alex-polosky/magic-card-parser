@@ -68,11 +68,18 @@ if (isMainThread) {
         } of results) {
             if (!error) {
                 try {
+                    var typeLineParse = parseTypeLine(type.toLowerCase(), name);
+                    if (typeLineParse.result) {
+                        typeLineParse = typeLineParse.result[0];
+                    } else {
+                        failures.push({ name, oracleText, error: typeLineParse.error});
+                        continue;
+                    }
                 successes.push({
                     cardID,
                     name,
                     manaCost,
-                    typeLine: parseTypeLine(type.toLowerCase()).result[0],
+                    typeLine: typeLineParse,
                     parsed: result[0],
                     power,
                     toughness,
@@ -82,11 +89,18 @@ if (isMainThread) {
                     console.error(name);
                 }
             } else if (result) {
+                var typeLineParse = parseTypeLine(type.toLowerCase(), name);
+                if (typeLineParse.result) {
+                    typeLineParse = typeLineParse.result[0];
+                } else {
+                    failures.push({ name, oracleText, error: typeLineParse.error});
+                    continue;
+                }
                 ambiguous.push({
                     cardID,
                     name,
                     manaCost,
-                    typeLine: parseTypeLine(type.toLowerCase()).result[0],
+                    typeLine: typeLineParse,
                     oracleText,
                     parsed: result[0],
                     otherParses: result.slice(1),

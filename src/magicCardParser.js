@@ -48,12 +48,12 @@ const parseCard = (card) => {
     return { result, error: null, oracleText, card };
 };
 
-const parseTypeLine = (typeLine) => {
+const parseTypeLine = (typeLine, card) => {
     const typeLineParser = new Parser(compiledTypeLineGrammar);
     try {
         typeLineParser.feed(typeLine);
     } catch (error) {
-        console.error(typeLine, error);
+        console.error(card + "\n" + typeLine, error);
         return { result: null, error, typeLine };
     }
 
@@ -89,6 +89,8 @@ const cardToGraphViz = (card) => {
             });
         } else if (obj === null) {
             nodes.push({ id: myId, label: 'null'});
+        } else if (obj === undefined) {
+            nodes.push({ id: myId, label: 'undefined'});
         } else if (obj.constructor === Object) {
             nodes.push({ id: myId, label: ' ' });
             for (const [key, value] of Object.entries(obj)) {
