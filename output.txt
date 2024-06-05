@@ -1,0 +1,1173 @@
+
+> magic-card-parser@0.3.0 assess
+> npm run build && node --max-old-space-size=8192 scripts/assessCardParser.js
+
+
+> magic-card-parser@0.3.0 build
+> sh nearley/helper.sh
+
+successes 6418
+ambiguous 7515
+{
+  "cardID": "91433559-ad01-4bde-b0c0-f9cbb3589e89",
+  "name": "Dominus of Fealty",
+  "manaCost": "{U/R}{U/R}{U/R}{U/R}{U/R}",
+  "typeLine": {
+    "type": "creature",
+    "subType": {
+      "and": [
+        "spirit",
+        "avatar"
+      ]
+    }
+  },
+  "oracleText": "flying\nat the beginning of your upkeep, you may gain control of target permanent until end of turn. if you do, untap it and it gains haste until end of turn.",
+  "parsed": [
+    [
+      "flying"
+    ],
+    {
+      "trigger": {
+        "turnPhase": {
+          "qualification": {
+            "whose": "your"
+          },
+          "partOfTurn": "upkeep"
+        }
+      },
+      "effect": {
+        "actor": "you",
+        "does": {
+          "may": {
+            "does": {
+              "gainControlOf": {
+                "reference": {
+                  "targetCount": 1
+                },
+                "object": {
+                  "type": {
+                    "and": [
+                      "permanent"
+                    ]
+                  }
+                }
+              }
+            },
+            "until": "endOfTurn"
+          },
+          "ifDo": {
+            "and": [
+              {
+                "tap": "it"
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "otherParses": [
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "actor": "you",
+          "does": {
+            "may": {
+              "does": {
+                "gainsControlOf": {
+                  "reference": {
+                    "targetCount": 1
+                  },
+                  "object": {
+                    "type": {
+                      "and": [
+                        "permanent"
+                      ]
+                    }
+                  }
+                }
+              },
+              "until": "endOfTurn"
+            },
+            "ifDo": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "actor": "you",
+          "does": {
+            "may": {
+              "gainsControlOf": {
+                "reference": {
+                  "targetCount": 1
+                },
+                "object": {
+                  "type": {
+                    "and": [
+                      "permanent"
+                    ]
+                  }
+                }
+              },
+              "until": [
+                [
+                  " "
+                ],
+                "endOfTurn"
+              ]
+            },
+            "ifDo": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "does": {
+                "may": {
+                  "gainControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "until": "endOfTurn"
+            }
+          },
+          {
+            "condition": {
+              "actor": "you",
+              "does": "do"
+            },
+            "effect": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "does": {
+                "may": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "until": "endOfTurn"
+            }
+          },
+          {
+            "condition": {
+              "actor": "you",
+              "does": "do"
+            },
+            "effect": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "does": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              }
+            }
+          },
+          {
+            "condition": {
+              "actor": "you",
+              "does": "do"
+            },
+            "effect": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "does": {
+                  "gainControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              }
+            }
+          },
+          {
+            "condition": {
+              "actor": "you",
+              "does": "do"
+            },
+            "effect": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "gainsControlOf": {
+                  "reference": {
+                    "targetCount": 1
+                  },
+                  "object": {
+                    "type": {
+                      "and": [
+                        "permanent"
+                      ]
+                    }
+                  }
+                },
+                "until": [
+                  [
+                    " "
+                  ],
+                  "endOfTurn"
+                ]
+              }
+            }
+          },
+          {
+            "condition": {
+              "actor": "you",
+              "does": "do"
+            },
+            "effect": {
+              "and": [
+                {
+                  "tap": "it"
+                },
+                {
+                  "what": "it",
+                  "does": {
+                    "does": {
+                      "gains": "haste"
+                    },
+                    "duration": {
+                      "until": "endOfTurn"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "does": {
+                "may": {
+                  "gainControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "until": "endOfTurn"
+            }
+          },
+          {
+            "and": [
+              {
+                "condition": {
+                  "actor": "you",
+                  "does": "do"
+                },
+                "effect": {
+                  "tap": "it"
+                }
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "does": {
+                "may": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "until": "endOfTurn"
+            }
+          },
+          {
+            "and": [
+              {
+                "condition": {
+                  "actor": "you",
+                  "does": "do"
+                },
+                "effect": {
+                  "tap": "it"
+                }
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "does": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              }
+            }
+          },
+          {
+            "and": [
+              {
+                "condition": {
+                  "actor": "you",
+                  "does": "do"
+                },
+                "effect": {
+                  "tap": "it"
+                }
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "does": {
+                  "gainControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              }
+            }
+          },
+          {
+            "and": [
+              {
+                "condition": {
+                  "actor": "you",
+                  "does": "do"
+                },
+                "effect": {
+                  "tap": "it"
+                }
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": [
+          {
+            "actor": "you",
+            "does": {
+              "may": {
+                "gainsControlOf": {
+                  "reference": {
+                    "targetCount": 1
+                  },
+                  "object": {
+                    "type": {
+                      "and": [
+                        "permanent"
+                      ]
+                    }
+                  }
+                },
+                "until": [
+                  [
+                    " "
+                  ],
+                  "endOfTurn"
+                ]
+              }
+            }
+          },
+          {
+            "and": [
+              {
+                "condition": {
+                  "actor": "you",
+                  "does": "do"
+                },
+                "effect": {
+                  "tap": "it"
+                }
+              },
+              {
+                "what": "it",
+                "does": {
+                  "does": {
+                    "gains": "haste"
+                  },
+                  "duration": {
+                    "until": "endOfTurn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "and": [
+            {
+              "actor": "you",
+              "does": {
+                "may": {
+                  "does": {
+                    "gainControlOf": {
+                      "reference": {
+                        "targetCount": 1
+                      },
+                      "object": {
+                        "type": {
+                          "and": [
+                            "permanent"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "until": "endOfTurn"
+                },
+                "ifDo": {
+                  "tap": "it"
+                }
+              }
+            },
+            {
+              "what": "it",
+              "does": {
+                "does": {
+                  "gains": "haste"
+                },
+                "duration": {
+                  "until": "endOfTurn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "and": [
+            {
+              "actor": "you",
+              "does": {
+                "may": {
+                  "does": {
+                    "gainsControlOf": {
+                      "reference": {
+                        "targetCount": 1
+                      },
+                      "object": {
+                        "type": {
+                          "and": [
+                            "permanent"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "until": "endOfTurn"
+                },
+                "ifDo": {
+                  "tap": "it"
+                }
+              }
+            },
+            {
+              "what": "it",
+              "does": {
+                "does": {
+                  "gains": "haste"
+                },
+                "duration": {
+                  "until": "endOfTurn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "and": [
+            {
+              "actor": "you",
+              "does": {
+                "may": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  },
+                  "until": [
+                    [
+                      " "
+                    ],
+                    "endOfTurn"
+                  ]
+                },
+                "ifDo": {
+                  "tap": "it"
+                }
+              }
+            },
+            {
+              "what": "it",
+              "does": {
+                "does": {
+                  "gains": "haste"
+                },
+                "duration": {
+                  "until": "endOfTurn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "actor": "you",
+          "does": {
+            "does": {
+              "may": {
+                "does": {
+                  "gainControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              },
+              "ifDo": {
+                "and": [
+                  {
+                    "tap": "it"
+                  },
+                  {
+                    "what": "it",
+                    "does": {
+                      "gains": "haste"
+                    }
+                  }
+                ]
+              }
+            },
+            "until": "endOfTurn"
+          }
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "actor": "you",
+          "does": {
+            "does": {
+              "may": {
+                "does": {
+                  "gainsControlOf": {
+                    "reference": {
+                      "targetCount": 1
+                    },
+                    "object": {
+                      "type": {
+                        "and": [
+                          "permanent"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "until": "endOfTurn"
+              },
+              "ifDo": {
+                "and": [
+                  {
+                    "tap": "it"
+                  },
+                  {
+                    "what": "it",
+                    "does": {
+                      "gains": "haste"
+                    }
+                  }
+                ]
+              }
+            },
+            "until": "endOfTurn"
+          }
+        }
+      }
+    ],
+    [
+      [
+        "flying"
+      ],
+      {
+        "trigger": {
+          "turnPhase": {
+            "qualification": {
+              "whose": "your"
+            },
+            "partOfTurn": "upkeep"
+          }
+        },
+        "effect": {
+          "actor": "you",
+          "does": {
+            "does": {
+              "may": {
+                "gainsControlOf": {
+                  "reference": {
+                    "targetCount": 1
+                  },
+                  "object": {
+                    "type": {
+                      "and": [
+                        "permanent"
+                      ]
+                    }
+                  }
+                },
+                "until": [
+                  [
+                    " "
+                  ],
+                  "endOfTurn"
+                ]
+              },
+              "ifDo": {
+                "and": [
+                  {
+                    "tap": "it"
+                  },
+                  {
+                    "what": "it",
+                    "does": {
+                      "gains": "haste"
+                    }
+                  }
+                ]
+              }
+            },
+            "until": "endOfTurn"
+          }
+        }
+      }
+    ]
+  ],
+  "power": "4",
+  "toughness": "4"
+}
+failures 14820
+{"name":"Ugin's Mastery","oracleText":"whenever you cast a colorless creature spell, manifest the top card of your library. (put it onto the battlefield face down as a 2/2 creature. turn it face up any time for its mana cost if it's a creature card.)\nwhenever you attack with creatures with total power 6 or greater, you may turn a face-down creature you control face up.","error":{"offset":54,"token":{"value":" "}}}
+{"name":"Cloudform","oracleText":"when ~ enters the battlefield, it becomes an aura with enchant creature. manifest the top card of your library and attach ~ to it. (to manifest a card, put it onto the battlefield face down as a 2/2 creature. turn it face up any time for its mana cost if it's a creature card.)\nenchanted creature has flying and hexproof.","error":{"offset":81,"token":{"value":" "}}}
+{"name":"\"Name Sticker\" Goblin","oracleText":"when this creature enters the battlefield from anywhere other than a graveyard or exile, if it's on the battlefield and you control 9 or fewer creatures named ~, roll a 20-sided die.\n1-6 | add {r}{r}{r}{r}.\n7-14 | add {r}{r}{r}{r}{r}.\n15-20 | add {r}{r}{r}{r}{r}{r}.","error":{"offset":57,"token":{"value":"t"}}}
+{"name":"Karvanista, Loyal Lupari // Lupari Shield","error":"Currently only support normal layout"}
+{"name":"Siphon Insight","oracleText":"look at the top two cards of target opponent's library. exile one of them face down and put the other on the bottom of that library. you may look at and play the exiled card for as long as it remains exiled, and you may spend mana as though it were mana of any color to cast that spell.\nflashback {1}{u}{b}","error":{"offset":104,"token":{"value":" "}}}
+{"name":"Twinblade Geist // Twinblade Invocation","error":"Currently only support normal layout"}
+{"name":"Break Open","oracleText":"turn target face-down creature an opponent controls face up.","error":{"offset":3,"token":{"value":"n"}}}
+{"name":"Talas Lookout","oracleText":"flying\nwhen ~ dies, look at the top two cards of your library. put one of them into your hand and the other into your graveyard.","error":{"offset":110,"token":{"value":"t"}}}
+parse rate 13933 / 28753

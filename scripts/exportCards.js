@@ -116,7 +116,6 @@ if (isMainThread) {
         console.info('successes', successes.length);
         console.info('ambiguous', ambiguous.length);
         console.info('failures', failures.length);
-        // console.debug(failures.join('\n,'));
         console.info(
             'parse rate',
             successes.length + ambiguous.length,
@@ -124,7 +123,8 @@ if (isMainThread) {
             successes.length + ambiguous.length + failures.length,
         );
 
-        fs.writeFileSync('./valid-cards-magic-card-parser.json', JSON.stringify(successes, null, 4));
+        // successes.sort((a, b) => a.name.localeCompare(b.name));
+        fs.writeFileSync('./valid-cards-magic-card-parser-part.json', JSON.stringify(successes.slice(0, 1000), null, 4));
     })();
 } else {
     const result = workerData.map(parseCard);

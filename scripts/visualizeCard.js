@@ -16,7 +16,15 @@ if (!fs.existsSync('./oracle_cards.json')) {
         script = cardToGraphViz(card);
     }
     try {
-        const graph = await new Promise((resolve, reject) => graphviz.parse(script, resolve, (code, out, err) => reject([code, out, err])));
+        const graph = await new Promise((resolve, reject) => {
+            try {
+                const result = graphviz.parse(script, resolve, (code, out, err) => reject([code, out, err]));
+                return result;
+            } catch (err) {
+                console.error(err);
+                throw new Error('Error running graph')
+            }
+        });
         graph.output('svg', 'cardVisualization.svg');
     } catch(err) {
         console.error(err);
